@@ -1,26 +1,35 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-sans: var(--font-be-vietnam), ui-sans-serif, system-ui, sans-serif;
+  --color-ink: #0d0f14;
+  --color-panel: #171a22;
+  --color-line: #2b303c;
+  --color-gold: #f5c451;
+  --color-paper: #f6ecd4;
+  --color-grid: #cdb98a;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #0d0f14;
+  background-image:
+    radial-gradient(60rem 30rem at 50% -10%, rgba(245, 196, 81, 0.13), transparent 70%),
+    radial-gradient(40rem 24rem at 100% 100%, rgba(37, 99, 235, 0.1), transparent 70%);
+  background-attachment: fixed;
+  color: #f4f4f5;
+}
+
+@keyframes stone-pop {
+  from {
+    transform: scale(0.4);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.stone-pop {
+  animation: stone-pop 140ms ease-out;
 }
